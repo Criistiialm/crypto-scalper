@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backtest Local",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/backtest.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "LANGSMITH_API_KEY": "${env:LANGSMITH_API_KEY}",
+        "LANGSMITH_PROJECT": "${env:LANGSMITH_PROJECT}",
+        "ANTHROPIC_API_KEY": "${env:ANTHROPIC_API_KEY}",
+        "MODE": "BACKTEST"
+      },
+      "args": ["--weeks", "4"]
+    },
+    {
+      "name": "Paper Trading",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/agent.py",
+      "console": "integratedTerminal",
+      "env": {
+        "MODE": "PAPER",
+        "BYBIT_DEMO_API_KEY": "${env:BYBIT_DEMO_API_KEY}"
+      }
+    },
+    {
+      "name": "Live Trading (10 USDT)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/agent.py",
+      "console": "integratedTerminal",
+      "env": {
+        "MODE": "LIVE",
+        "INITIAL_CAPITAL": "10",
+        "BYBIT_LIVE_API_KEY": "${env:BYBIT_LIVE_API_KEY}"
+      }
+    },
+    {
+      "name": "Tests",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["tests/", "-v", "--tb=short"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

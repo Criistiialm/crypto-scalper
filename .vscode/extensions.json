@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "ms-vscode-remote.remote-ssh",
+    "GitHub.copilot",
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-azure-account",
+    "MongoDB.mongodb-vscode",
+    "ms-python.debugpy"
+  ]
+}
