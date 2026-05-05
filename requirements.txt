@@ -20,7 +20,7 @@ ccxt>=4.0.0
 # >=>== DATA PROCESSING >=>==
 pandas>=2.1.0
 numpy>=1.26.0
-pandas-ta>=0.3.14b0
+pandas-ta==0.3.14b
 scipy>=1.11.0
 
 # >=>== DATABASE >=>==
