@@ -3,7 +3,7 @@ import os
 from typing import Dict, Optional
 
 
-class CoinglessClient:
+class CoinglassClient:
     """Coinglass API wrapper"""
 
     def __init__(self):

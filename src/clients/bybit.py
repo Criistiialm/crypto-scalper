@@ -18,7 +18,7 @@ class BybitClient:
             "https://testnet.bybit.com/v5" if testnet else "https://api.bybit.com/v5"
         )
 
-    async def get_ohlcv(self, symbol: str, timeframe: str = "1m") -> List[Dict]:
+    async def get_ohlcv(self, symbol: str, timeframe: str = "1m", start_time: str = None) -> List[Dict]:
         """Get OHLCV candlesticks"""
         # TODO: Implement after May 11
         return []

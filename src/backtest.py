@@ -34,7 +34,7 @@ async def run_backtest(weeks: int = 4):
 
         # Simulate LONDON and NY sessions
         for session in ["LONDON", "NEWYORK"]:
-            result = await agent.run_trading_cycle(session)
+            result = await agent.run_trading_cycle(session, historical_date=date)
             logger.info(f"   {session}: {len(result.get('trades', []))} trades")
 
     # Print summary
