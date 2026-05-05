@@ -1,0 +1,48 @@
+# config/settings.yaml
+
+TRADING_SESSIONS:
+  LONDON:
+    START_ART: "03:30"      # 8:30 AM UTC
+    END_ART: "13:00"        # 4:00 PM UTC
+    TIMEZONE: "GMT-3"
+    CHARACTERISTICS: "Opening momentum, high volatility"
+    
+  NEWYORK:
+    START_ART: "10:30"      # 1:30 PM UTC
+    END_ART: "13:30"        # 4:30 PM UTC
+    TIMEZONE: "GMT-3"
+    CHARACTERISTICS: "Overlap with London, highest liquidity"
+
+MARKET_STRUCTURE:
+  # Accumulation Zones (bajo volumen, precio lateral)
+  ACCUMULATION_SIGNALS:
+    - "Low ADX (< 20)"
+    - "Low volatility (ATR < average)"
+    - "High volume concentración"
+    - "Price touching Boss levels"
+  
+  # Manipulation (antes de rompimiento)
+  MANIPULATION_SIGNALS:
+    - "False breakouts (rápida reversión)"
+    - "Liquidaciones falsas"
+    - "Orden book stacked un lado"
+  
+  # Distribution Zones (acumulación inversa)
+  DISTRIBUTION_SIGNALS:
+    - "Price reaching resistance"
+    - "Divergencia ADX"
+    - "Volume climax"
+  
+  # Rompimiento real (después)
+  BREAKOUT_SIGNALS:
+    - "ADX > 25"
+    - "High volume confirmation"
+    - "Breaker block hit"
+    - "MSS (Market Structure Shift)"
+
+CONFLUENCE_MULTIPLIERS:
+  ACCUMULATION_ZONE: 0.70  # Reduce confluencia (no operar)
+  DISTRIBUTION_ZONE: 0.70  # Reduce confluencpip instalia
+  LONDON_SESSION: 1.10     # Aumenta confluencia (más liquida)
+  NEWYORK_SESSION: 1.20    # Aumenta confluencia (más liquida)
+  OVERLAP_PERIOD: 1.30     # Máxima confluencia
