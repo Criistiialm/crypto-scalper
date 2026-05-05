@@ -9,6 +9,9 @@ from src.agent import HighProbabilityScalper
 load_dotenv()
 logger = logging.getLogger(__name__)
 
+api_key = os.getenv("BYBIT_API_KEY")
+api_secret = os.getenv("BYBIT_API_SECRET")
+
 
 async def run_backtest(weeks: int = 4):
     """
