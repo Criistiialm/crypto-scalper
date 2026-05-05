@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 
 from langgraph.graph import StateGraph, END
 from langsmith import Client as LangSmithClient
+from src.utils.session import get_session_manager, TradingSession
+from src.clients.mongodb import get_mongo_client
+from src.utils.compounding import CompoundingEngine
 
 # Load environment variables
 load_dotenv()
@@ -59,6 +62,9 @@ class HighProbabilityScalper:
         self.win_rate_target = float(os.getenv("WIN_RATE_TARGET", 0.80))
         self.trades: List[dict] = []
         self.mode = os.getenv("MODE", "BACKTEST")
+        self.session_manager = get_session_manager()
+        self.mongo_client = get_mongo_client()
+        self.compounding = CompoundingEngine(self.capital, self.leverage)
 
         # LangSmith tracing
         self.langsmith_client = LangSmithClient()
